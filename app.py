@@ -120,243 +120,26 @@ def responder(texto):
         )
 
 
-    # OPCIÓN 2
-    if texto in ["2", "departamentos", "departamento", "disponibles"]:
+   # OPCIÓN 2
+if texto in ["2", "departamentos", "departamento", "disponibles"]:
 
-        return (
-            "🏠 *DEPARTAMENTOS VENTUS*\n\n"
-
-            "Tenemos diferentes alternativas dentro del proyecto "
-            "VENTUS, de acuerdo con tus necesidades.\n\n"
-
-            "⭐ También contamos con los departamentos *501 y 502*, "
-            "que incluyen sus aires/azotea de uso exclusivo.\n\n"
-
-            "👉 Escribe *3* para conocer específicamente los "
-            "departamentos 501 y 502.\n\n"
-
-            "👉 Escribe *6* si deseas que un asesor te contacte."
-        )
-
-
-    # OPCIÓN 3
-    if texto in [
-        "3",
-        "501",
-        "502",
-        "departamento 501",
-        "departamento 502",
-        "aires"
-    ]:
-
-        return (
-            "⭐ *DEPARTAMENTOS 501 Y 502*\n\n"
-
-            "Los departamentos 501 y 502 tienen una característica "
-            "especial: incluyen sus *aires/azotea de uso exclusivo*.\n\n"
-
-            "🏠 En estos aires se contempla además una "
-            "*habitación adicional*, ampliando las posibilidades "
-            "de uso del departamento.\n\n"
-
-            "Esto permite aprovechar mejor el espacio y generar "
-            "un ambiente adicional para dormitorio, huéspedes, "
-            "oficina u otros usos según el diseño final.\n\n"
-
-            "📲 Si deseas conocer la distribución y características "
-            "con mayor detalle, escribe *6* para hablar con un asesor."
-        )
-
-
-    # OPCIÓN 4
-    if texto in [
-        "4",
-        "airbnb",
-        "alquiler",
-        "alquiler temporal",
-        "inversion",
-        "inversión"
-    ]:
-
-        return (
-            "🏡 *VENTUS + ALQUILER TEMPORAL*\n\n"
-
-            "VENTUS también está pensado para quienes desean "
-            "utilizar su departamento como una unidad para "
-            "alquiler temporal tipo Airbnb.\n\n"
-
-            "Esto convierte al proyecto en una alternativa interesante "
-            "tanto para vivienda como para uso de alquiler temporal.\n\n"
-
-            "📌 No te damos una rentabilidad estimada sin datos reales; "
-            "nuestro objetivo es mostrarte el potencial del inmueble.\n\n"
-
-            "👉 Escribe *6* para conversar con un asesor."
-        )
-
-
-    # OPCIÓN 5
-    if texto in [
-        "5",
-        "ubicacion",
-        "ubicación",
-        "donde",
-        "dónde",
-        "direccion",
-        "dirección"
-    ]:
-
-        return (
-            "📍 *UBICACIÓN DE VENTUS*\n\n"
-
-            "VENTUS está ubicado en *Wanchaq - Cusco*.\n\n"
-
-            "Su ubicación permite tener acceso a diferentes "
-            "servicios y vías de conexión de la ciudad.\n\n"
-
-            "📲 Si deseas recibir la ubicación exacta y orientación "
-            "para llegar, escribe *6* y un asesor podrá ayudarte."
-        )
-
-
-    # OPCIÓN 6
-    if texto in [
-        "6",
-        "asesor",
-        "asesora",
-        "contacto",
-        "vendedor",
-        "ventas",
-        "quiero comprar",
-        "comprar"
-    ]:
-
-        return (
-            "👨‍💼 *ASESOR VENTUS*\n\n"
-
-            "Excelente. Podemos ayudarte con información "
-            "sobre disponibilidad, distribución, precios y "
-            "proceso de compra.\n\n"
-
-            "📲 Un asesor de BONET CONTRATISTAS GENERALES "
-            "se pondrá en contacto contigo.\n\n"
-
-            "Gracias por tu interés en *VENTUS* 🏢"
-        )
-
-
-    # PALABRAS CLAVE AIRBNB
-    if "airbnb" in texto or "alquiler" in texto:
-
-        return responder("4")
-
-
-    # PALABRAS CLAVE 501 / 502
-    if "501" in texto or "502" in texto:
-
-        return responder("3")
-
-
-    # SI NO ENTIENDE
     return (
-        "Disculpa, no pude identificar tu opción. 😊\n\n"
-        "Por favor responde con uno de estos números:\n\n"
-        "1️⃣ Conocer VENTUS\n"
-        "2️⃣ Departamentos disponibles\n"
-        "3️⃣ Departamentos 501 y 502\n"
-        "4️⃣ Airbnb / alquiler temporal\n"
-        "5️⃣ Ubicación\n"
-        "6️⃣ Hablar con un asesor"
-    )
+        "🏢 *DEPARTAMENTOS VENTUS*\n\n"
 
+        "Actualmente contamos con dos departamentos destacados:\n\n"
 
-# ==============================
-# PÁGINA PRINCIPAL
-# ==============================
+        "🔹 *DEPARTAMENTO 501 – TIPO 3*\n"
+        "📐 Área: *127.10 m²*\n"
+        "🏙️ Ubicación: *Fachada*\n"
+        "🏠 Incluye *aires/azotea de uso exclusivo*\n"
+        "➕ En el área de aires se contempla *un ambiente adicional*.\n\n"
 
-@app.route("/", methods=["GET"])
-def home():
+        "🔹 *DEPARTAMENTO 502 – TIPO 4*\n"
+        "📐 Área: *124.42 m²*\n"
+        "🏙️ Ubicación: *Interior*\n"
+        "🏠 Incluye *aires/azotea de uso exclusivo*\n"
+        "➕ En el área de aires se contempla *un ambiente adicional*.\n\n"
 
-    return "Chat Bot Ventus-Bonet activo"
-
-
-# ==============================
-# VERIFICACIÓN DEL WEBHOOK
-# ==============================
-
-@app.route("/webhook", methods=["GET"])
-def verify():
-
-    mode = request.args.get("hub.mode")
-    token = request.args.get("hub.verify_token")
-    challenge = request.args.get("hub.challenge")
-
-    if mode == "subscribe" and token == VERIFY_TOKEN:
-
-        return challenge, 200
-
-    return "Forbidden", 403
-
-
-# ==============================
-# RECIBIR MENSAJES
-# ==============================
-
-@app.route("/webhook", methods=["POST"])
-def webhook():
-
-    data = request.get_json()
-
-    print("WEBHOOK RECIBIDO:")
-    print(data)
-
-    try:
-
-        entry = data["entry"][0]
-
-        changes = entry["changes"][0]
-
-        value = changes["value"]
-
-        messages = value.get("messages", [])
-
-        if messages:
-
-            message = messages[0]
-
-            sender = message.get("from")
-
-            message_type = message.get("type")
-
-            if message_type == "text":
-
-                incoming_text = message["text"]["body"]
-
-                print("MENSAJE:", incoming_text)
-
-                print("REMITENTE:", sender)
-
-                reply = responder(incoming_text)
-
-                send_whatsapp_message(
-                    sender,
-                    reply
-                )
-
-    except Exception as e:
-
-        print("ERROR:", e)
-
-    return "EVENT_RECEIVED", 200
-
-
-# ==============================
-# EJECUTAR
-# ==============================
-
-if __name__ == "__main__":
-
-    app.run(
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 5000))
+        "💬 Para conocer *precio, forma de pago y disponibilidad actual*, "
+        "escribe *6* para hablar con un asesor."
     )
