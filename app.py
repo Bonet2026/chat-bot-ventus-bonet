@@ -99,25 +99,35 @@ def responder(texto):
         return menu_principal()
 
 
-    # OPCIÓN 1
-    if texto in ["1", "ventus", "proyecto", "informacion", "información"]:
+  # OPCIÓN 1
+if texto in ["1", "ventus", "proyecto", "informacion", "información"]:
 
-        return (
-            "🏢 *VENTUS - BONET CONTRATISTAS GENERALES*\n\n"
+    return (
+        "🏢 *VENTUS – BONET CONTRATISTAS GENERALES*\n\n"
 
-            "Un proyecto multifamiliar ubicado en Wanchaq, Cusco, "
-            "pensado para quienes buscan una vivienda moderna "
-            "y también una alternativa para alquiler temporal.\n\n"
+        "✨ *Tu nuevo espacio en Wanchaq – Cusco.*\n\n"
 
-            "✨ Características destacadas:\n"
-            "• Departamentos modernos\n"
-            "• Diseño funcional\n"
-            "• Ubicación estratégica en Wanchaq\n"
-            "• Espacios pensados para vivienda y alquiler temporal\n"
-            "• Departamentos 501 y 502 con aires de uso exclusivo\n\n"
+        "VENTUS es un proyecto multifamiliar pensado para quienes "
+        "buscan una vivienda moderna, funcional y bien ubicada.\n\n"
 
-            "Escribe *2* para conocer los departamentos disponibles."
-        )
+        "🏠 Además, sus departamentos pueden ser considerados "
+        "como una alternativa para alquiler temporal tipo Airbnb, "
+        "según las condiciones del propietario y la normativa aplicable.\n\n"
+
+        "⭐ *Características destacadas:*\n"
+        "• Departamentos modernos y funcionales.\n"
+        "• Ubicación en Wanchaq – Cusco.\n"
+        "• Departamentos 501 y 502 con aires/azotea de uso exclusivo.\n"
+        "• Ambiente adicional contemplado en el área de aires.\n"
+        "• Pensado para vivienda y alquiler temporal.\n\n"
+
+        "📲 *¿Qué deseas conocer?*\n\n"
+        "👉 Escribe *2* para ver los departamentos disponibles.\n"
+        "👉 Escribe *3* para conocer los departamentos 501 y 502.\n"
+        "👉 Escribe *4* para conocer el potencial para Airbnb.\n"
+        "👉 Escribe *5* para conocer la ubicación.\n"
+        "👉 Escribe *6* para hablar con un asesor."
+    )
 
 
    # OPCIÓN 2
