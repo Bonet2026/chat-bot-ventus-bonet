@@ -211,3 +211,25 @@ if texto in ["5", "ubicacion", "ubicación", "donde", "dónde", "dirección"]:
         "💬 Si deseas conocer la ubicación exacta y recibir "
         "orientación, escribe *6* para hablar con un asesor."
     )
+# OPCIÓN 6
+if texto in ["6", "asesor", "asesora", "asesor comercial", "contactar"]:
+
+    return (
+        "👨‍💼 *ASESOR COMERCIAL VENTUS*\n\n"
+
+        "Gracias por tu interés en *VENTUS*.\n\n"
+
+        "Un asesor de BONET puede ayudarte con información sobre:\n\n"
+
+        "🏢 Departamentos disponibles\n"
+        "💰 Precios y formas de pago\n"
+        "📐 Planos y distribución\n"
+        "📍 Ubicación del proyecto\n"
+        "🏠 Información sobre alquiler temporal / Airbnb\n"
+        "📅 Coordinación de visita al proyecto\n\n"
+
+        "📲 *Contáctanos directamente:*\n"
+        "WhatsApp: *914 230 705*\n\n"
+
+        "👉 Déjanos tu consulta y un asesor continuará contigo."
+    )
