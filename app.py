@@ -187,3 +187,27 @@ if texto in ["4", "airbnb", "alquiler", "alquiler temporal"]:
         "💬 Si deseas conocer precios, forma de pago y disponibilidad, "
         "escribe *6* para hablar con un asesor."
     )
+    # OPCIÓN 5
+if texto in ["5", "ubicacion", "ubicación", "donde", "dónde", "dirección"]:
+
+    return (
+        "📍 *UBICACIÓN DEL PROYECTO VENTUS*\n\n"
+
+        "🏢 *VENTUS* se encuentra en *Wanchaq – Cusco*.\n\n"
+
+        "📌 Su ubicación permite contar con acceso a "
+        "diferentes servicios y puntos importantes de la ciudad.\n\n"
+
+        "🏪 Cerca del proyecto encontrarás referencias como "
+        "supermercados, bancos, clínicas y vías de acceso hacia "
+        "el centro de Cusco.\n\n"
+
+        "⚽ Una referencia cercana es el campo deportivo "
+        "*El Hueco*.\n\n"
+
+        "🚗 La ubicación es una de las características importantes "
+        "de VENTUS para vivir o considerar el alquiler temporal.\n\n"
+
+        "💬 Si deseas conocer la ubicación exacta y recibir "
+        "orientación, escribe *6* para hablar con un asesor."
+    )
