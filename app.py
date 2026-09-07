@@ -143,3 +143,23 @@ if texto in ["2", "departamentos", "departamento", "disponibles"]:
         "💬 Para conocer *precio, forma de pago y disponibilidad actual*, "
         "escribe *6* para hablar con un asesor."
     )
+# OPCIÓN 3
+    if texto in ["3", "501", "502", "departamento 501", "departamento 502"]:
+        return (
+            "🏢 *INFORMACIÓN DE LOS DEPARTAMENTOS 501 Y 502*\n\n"
+
+            "🔹 *DEPARTAMENTO 501 – TIPO 3*\n"
+            "📐 Área: *127.10 m²*\n"
+            "🏙️ Ubicación: *Fachada*\n"
+            "🏠 Aires/azotea de uso exclusivo\n"
+            "➕ Ambiente adicional contemplado en el área de aires.\n\n"
+
+            "🔹 *DEPARTAMENTO 502 – TIPO 4*\n"
+            "📐 Área: *124.42 m²*\n"
+            "🏙️ Ubicación: *Interior*\n"
+            "🏠 Aires/azotea de uso exclusivo\n"
+            "➕ Ambiente adicional contemplado en el área de aires.\n\n"
+
+            "💬 Para conocer precios, forma de pago y disponibilidad actual, "
+            "escribe *6* para hablar con un asesor."
+        )
