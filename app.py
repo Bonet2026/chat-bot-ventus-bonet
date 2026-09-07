@@ -163,3 +163,27 @@ if texto in ["2", "departamentos", "departamento", "disponibles"]:
             "💬 Para conocer precios, forma de pago y disponibilidad actual, "
             "escribe *6* para hablar con un asesor."
         )
+# OPCIÓN 4
+if texto in ["4", "airbnb", "alquiler", "alquiler temporal"]:
+
+    return (
+        "🏠 *VENTUS PARA AIRBNB / ALQUILER TEMPORAL*\n\n"
+
+        "VENTUS está pensado no solo para vivienda, sino también "
+        "como una alternativa para quienes buscan utilizar su departamento "
+        "para alquiler temporal tipo Airbnb.\n\n"
+
+        "⭐ *¿Por qué VENTUS puede ser una buena alternativa?*\n\n"
+
+        "• Departamentos modernos y funcionales.\n"
+        "• Ubicación en Wanchaq – Cusco.\n"
+        "• Los departamentos 501 y 502 cuentan con "
+        "aires/azotea de uso exclusivo.\n"
+        "• En el área de aires se contempla un ambiente adicional.\n\n"
+
+        "📌 El uso para alquiler temporal dependerá de las condiciones "
+        "y decisiones del propietario y de la normativa aplicable.\n\n"
+
+        "💬 Si deseas conocer precios, forma de pago y disponibilidad, "
+        "escribe *6* para hablar con un asesor."
+    )
