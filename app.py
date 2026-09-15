@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 # ============================================================
-# CONFIGURACIÓN
+# CONFIGURACION
 # ============================================================
 
 VERIFY_TOKEN = os.environ.get(
@@ -33,7 +33,7 @@ def send_whatsapp_message(to, text):
         return False
 
     url = (
-        f"https://graph.facebook.com/v26.0/"
+        "https://graph.facebook.com/v26.0/"
         f"{PHONE_NUMBER_ID}/messages"
     )
 
@@ -73,34 +73,28 @@ def send_whatsapp_message(to, text):
     except Exception as error:
 
         print("Error enviando mensaje:", error)
-
         return False
 
 
 # ============================================================
-# MENÚ PRINCIPAL
+# MENU PRINCIPAL
 # ============================================================
 
 def menu_principal():
 
     return (
         "🏢 *VENTUS - BONET CONTRATISTAS GENERALES*\n\n"
-
         "👋 Bienvenido al asistente de información del "
         "*Proyecto Ventus*.\n\n"
-
         "Estamos para ayudarte a conocer nuestros departamentos "
         "en preventa y las posibilidades de inversión.\n\n"
-
         "📋 *¿Qué deseas conocer?*\n\n"
-
         "1️⃣ Información general de VENTUS\n"
         "2️⃣ Departamentos disponibles\n"
         "3️⃣ Información de los departamentos 501 y 502\n"
         "4️⃣ VENTUS para Airbnb / alquiler temporal\n"
         "5️⃣ Ubicación del proyecto\n"
         "6️⃣ Hablar con un asesor\n\n"
-
         "👉 Responde con el número de la opción que deseas."
     )
 
@@ -116,11 +110,7 @@ def responder(texto):
 
     texto = texto.lower().strip()
 
-
-    # --------------------------------------------------------
     # SALUDO
-    # --------------------------------------------------------
-
     if texto in [
         "hola",
         "ola",
@@ -133,14 +123,9 @@ def responder(texto):
         "menu",
         "menú"
     ]:
-
         return menu_principal()
 
-
-    # --------------------------------------------------------
-    # OPCIÓN 1
-    # --------------------------------------------------------
-
+    # OPCION 1
     if texto in [
         "1",
         "ventus",
@@ -151,28 +136,21 @@ def responder(texto):
 
         return (
             "🏢 *VENTUS - BONET CONTRATISTAS GENERALES*\n\n"
-
             "✨ *Tu nuevo espacio en Wanchaq - Cusco.*\n\n"
-
             "VENTUS es un proyecto multifamiliar pensado para "
             "quienes buscan una vivienda moderna, funcional y "
             "bien ubicada.\n\n"
-
             "🏠 Además, sus departamentos pueden ser considerados "
             "como una alternativa para alquiler temporal tipo Airbnb, "
             "según las condiciones del propietario y la normativa "
             "aplicable.\n\n"
-
             "⭐ *Características destacadas:*\n"
-
             "• Departamentos modernos y funcionales.\n"
             "• Ubicación en Wanchaq - Cusco.\n"
             "• Diferentes áreas y distribuciones.\n"
             "• Proyecto en etapa de preventa.\n"
             "• Pensado para vivienda e inversión.\n\n"
-
             "🧭 *¿Qué deseas conocer?*\n\n"
-
             "👉 Escribe *2* para ver los departamentos disponibles.\n"
             "👉 Escribe *3* para conocer los departamentos 501 y 502.\n"
             "👉 Escribe *4* para conocer el potencial para Airbnb.\n"
@@ -180,11 +158,7 @@ def responder(texto):
             "👉 Escribe *6* para hablar con un asesor."
         )
 
-
-    # --------------------------------------------------------
-    # OPCIÓN 2
-    # --------------------------------------------------------
-
+    # OPCION 2
     if texto in [
         "2",
         "departamentos",
@@ -194,31 +168,22 @@ def responder(texto):
 
         return (
             "🏢 *DEPARTAMENTOS VENTUS*\n\n"
-
             "Actualmente contamos con diferentes alternativas "
             "de departamentos dentro del proyecto.\n\n"
-
             "Entre las unidades que podemos mostrarte están:\n\n"
-
             "🔹 *DEPARTAMENTO 501 - TIPO 3*\n"
             "📐 Área referencial: *127.10 m²*\n"
             "🏙️ Ubicación: *Fachada*\n"
             "🏡 Incluye área de aires/azotea de uso exclusivo.\n\n"
-
             "🔹 *DEPARTAMENTO 502 - TIPO 4*\n"
             "📐 Área referencial: *124.42 m²*\n"
             "🏙️ Ubicación: *Interior*\n"
             "🏡 Incluye área de aires/azotea de uso exclusivo.\n\n"
-
             "💬 Para conocer precio, forma de pago y disponibilidad "
             "actual, escribe *6* para hablar con un asesor."
         )
 
-
-    # --------------------------------------------------------
-    # OPCIÓN 3
-    # --------------------------------------------------------
-
+    # OPCION 3
     if texto in [
         "3",
         "501",
@@ -229,28 +194,19 @@ def responder(texto):
 
         return (
             "🏢 *INFORMACIÓN DE LOS DEPARTAMENTOS 501 Y 502*\n\n"
-
             "🔷 *DEPARTAMENTO 501 - TIPO 3*\n\n"
-
             "📐 Área referencial: *127.10 m²*\n"
             "🏙️ Ubicación: *Fachada*\n"
             "🏡 Área de aires/azotea de uso exclusivo.\n\n"
-
             "🔷 *DEPARTAMENTO 502 - TIPO 4*\n\n"
-
             "📐 Área referencial: *124.42 m²*\n"
             "🏙️ Ubicación: *Interior*\n"
             "🏡 Área de aires/azotea de uso exclusivo.\n\n"
-
             "📲 Si deseas conocer precio, planos o disponibilidad, "
             "escribe *6* para comunicarte con un asesor."
         )
 
-
-    # --------------------------------------------------------
-    # OPCIÓN 4
-    # --------------------------------------------------------
-
+    # OPCION 4
     if texto in [
         "4",
         "airbnb",
@@ -262,31 +218,22 @@ def responder(texto):
 
         return (
             "💼 *VENTUS COMO ALTERNATIVA DE INVERSIÓN*\n\n"
-
             "El proyecto VENTUS también está orientado a compradores "
             "que desean evaluar sus departamentos para alquiler "
             "temporal tipo Airbnb.\n\n"
-
             "📍 Su ubicación en Wanchaq - Cusco permite considerar "
             "una estrategia dirigida tanto a vivienda como a "
             "alquiler temporal.\n\n"
-
             "Cada propietario administrará de manera independiente "
             "su departamento y su operación de alquiler.\n\n"
-
             "📊 Los resultados y rentabilidad dependen del precio "
             "de compra, ocupación, tarifa por noche, gastos y forma "
             "de administración.\n\n"
-
             "👉 Escribe *6* si deseas conversar con un asesor sobre "
             "una posible inversión."
         )
 
-
-    # --------------------------------------------------------
-    # OPCIÓN 5
-    # --------------------------------------------------------
-
+    # OPCION 5
     if texto in [
         "5",
         "ubicacion",
@@ -298,24 +245,16 @@ def responder(texto):
 
         return (
             "📍 *UBICACIÓN DEL PROYECTO VENTUS*\n\n"
-
             "El proyecto se encuentra en el distrito de "
             "*Wanchaq - Cusco*.\n\n"
-
             "📌 Sector: Av. Jorge Chávez.\n\n"
-
             "La ubicación permite acceso a diferentes servicios "
             "y zonas importantes de la ciudad.\n\n"
-
             "👉 Escribe *6* si deseas coordinar información adicional "
             "o una atención con nuestro equipo."
         )
 
-
-    # --------------------------------------------------------
-    # OPCIÓN 6
-    # --------------------------------------------------------
-
+    # OPCION 6
     if texto in [
         "6",
         "asesor",
@@ -331,27 +270,18 @@ def responder(texto):
 
         return (
             "👨‍💼 *ASESOR COMERCIAL VENTUS*\n\n"
-
             "Gracias por tu interés en nuestro proyecto.\n\n"
-
             "Un asesor de *Bonet Contratistas Generales S.A.C.* "
             "podrá brindarte información sobre:\n\n"
-
             "✅ Disponibilidad actual.\n"
             "✅ Precios de preventa.\n"
             "✅ Formas de pago.\n"
             "✅ Planos y áreas.\n"
             "✅ Alternativas de inversión.\n"
             "✅ Visita y presentación del proyecto.\n\n"
-
             "📲 Nuestro equipo continuará tu atención comercial "
             "por este mismo canal."
         )
-
-
-    # --------------------------------------------------------
-    # RESPUESTA NO RECONOCIDA
-    # --------------------------------------------------------
 
     return (
         "🤖 No pude identificar esa opción.\n\n"
@@ -360,7 +290,7 @@ def responder(texto):
 
 
 # ============================================================
-# WEBHOOK - VERIFICACIÓN DE META
+# WEBHOOK - VERIFICACION DE META
 # ============================================================
 
 @app.route("/webhook", methods=["GET"])
@@ -373,11 +303,9 @@ def verify_webhook():
     if mode == "subscribe" and token == VERIFY_TOKEN:
 
         print("Webhook verificado correctamente.")
-
         return challenge, 200
 
     print("Error verificando webhook.")
-
     return "Verification failed", 403
 
 
@@ -407,20 +335,17 @@ def receive_webhook():
             for change in changes:
 
                 value = change.get("value", {})
-
                 messages = value.get("messages", [])
 
                 for message in messages:
 
                     sender = message.get("from")
-
                     message_type = message.get("type")
 
                     if message_type != "text":
                         continue
 
                     text_data = message.get("text", {})
-
                     text = text_data.get("body", "")
 
                     print(
@@ -446,7 +371,50 @@ def receive_webhook():
 
 
 # ============================================================
-# PÁGINA PRINCIPAL / HEALTH CHECK
+# OAUTH CALLBACK - META EMBEDDED SIGNUP
+# ============================================================
+
+@app.route("/oauth/callback", methods=["GET"])
+def oauth_callback():
+
+    code = request.args.get("code")
+    error = request.args.get("error")
+    error_description = request.args.get("error_description")
+
+    if error:
+
+        print(
+            "Error OAuth Meta:",
+            error,
+            error_description
+        )
+
+        return (
+            f"Error de Meta: {error} - {error_description}",
+            400
+        )
+
+    if code:
+
+        # IMPORTANTE:
+        # Por ahora solo confirmamos que Meta devolvio correctamente
+        # el codigo OAuth. No mostramos el codigo en pantalla.
+        print("Codigo OAuth recibido correctamente.")
+
+        return (
+            "VENTUS BOT - Conexion con Meta recibida correctamente. "
+            "Ya puedes cerrar esta ventana.",
+            200
+        )
+
+    return (
+        "VENTUS BOT - Callback OAuth activo.",
+        200
+    )
+
+
+# ============================================================
+# PAGINA PRINCIPAL / HEALTH CHECK
 # ============================================================
 
 @app.route("/", methods=["GET"])
@@ -465,14 +433,15 @@ def health():
         "status": "ok",
         "verify_token": bool(VERIFY_TOKEN),
         "whatsapp_token": bool(WHATSAPP_TOKEN),
-        "phone_number_id": bool(PHONE_NUMBER_ID)
+        "phone_number_id": bool(PHONE_NUMBER_ID),
+        "oauth_callback": True
     }
 
     return status, 200
 
 
 # ============================================================
-# EJECUCIÓN LOCAL
+# EJECUCION LOCAL
 # ============================================================
 
 if __name__ == "__main__":
